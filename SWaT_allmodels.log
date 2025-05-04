@@ -1,0 +1,802 @@
+Target train/test shapes: torch.Size([3000, 10, 1]) / torch.Size([5000, 10, 1])
+--- Entering Testing Phase ---
+Testing ConvLSTMAutoencoder on SWaT Entity: Default
+--- Calling backprop for testing ---
+--- Returned from backprop (testing) ---
+--- Entering Scoring Phase ---
+Calculating loss on training set for POT...
+Shape of loss (test): (5000, 1)
+Shape of lossT (train): (3000, 1)
+Shape of labels: (5000, 1)
+Evaluating thresholds and metrics...
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.6238 (100 steps)
+Best F-2.0 found: 0.7485 (F1: 0.8063) P: 0.9256 R: 0.7143 at threshold 0.0125
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.6238 (100 steps)
+Best F-2.0 found: 0.7485 (F1: 0.8063) P: 0.9256 R: 0.7143 at threshold 0.0125
+--- Evaluation Results ---
+Overall results:
+{'FN': 184,
+ 'FP': 37,
+ 'Hit@100%': None,
+ 'Hit@150%': None,
+ 'NDCG@100%': None,
+ 'NDCG@150%': None,
+ 'ROC/AUC': 0.8528958415322051,
+ 'TN': 4319,
+ 'TP': 460,
+ 'f1': 0.8063053230510567,
+ 'precision': 0.9255533012967143,
+ 'recall': 0.7142857031943214,
+ 'threshold': 0.012476586280906313}
+Results appended to results\experiment_summary.csv
+--- Script End ---
+PS C:\Users\iship\Desktop\TranAD> python main.py --model ConvGRUAutoencoder --dataset SWaT --test
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='ConvGRUAutoencoder', dataset='SWaT', entity=None, retrain=False, test=True, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified or default found for SWaT. Assuming plain 'train/test/labels.npy' files.
+Loaded processed\SWaT\train.npy, shape: (3000, 1)
+Loaded processed\SWaT\test.npy, shape: (5000, 1)
+Loaded processed\SWaT\labels.npy, shape: (5000, 1)
+Train/Test/Label shapes: (3000, 1) / (5000, 1) / (5000, 1)
+--- Exiting load_dataset ---
+--- Returned from load_dataset ---
+--- Feature dimension: 1 ---
+--- Entering load_model_revised (ConvGRUAutoencoder) ---
+Loading pre-trained model: ConvGRUAutoencoder from checkpoints/ConvGRUAutoencoder_SWaT/model.ckpt
+Loaded checkpoint from epoch 4
+--- Exiting load_model_revised (ConvGRUAutoencoder) ---
+--- Returned from load_model_revised ---
+--- Original data prepared ---
+--- Calling convert_to_windows (window size: 10) ---
+--- Returned from convert_to_windows ---
+Original train/test shapes: torch.Size([3000, 1]) / torch.Size([5000, 1])
+Windowed train/test shapes: torch.Size([3000, 10, 1]) / torch.Size([5000, 10, 1])
+Target train/test shapes: torch.Size([3000, 10, 1]) / torch.Size([5000, 10, 1])
+--- Entering Testing Phase ---
+Testing ConvGRUAutoencoder on SWaT Entity: Default
+--- Calling backprop for testing ---
+--- Returned from backprop (testing) ---
+--- Entering Scoring Phase ---
+Calculating loss on training set for POT...
+Shape of loss (test): (5000, 1)
+Shape of lossT (train): (3000, 1)
+Shape of labels: (5000, 1)
+Evaluating thresholds and metrics...
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.6087 (100 steps)
+Best F-2.0 found: 0.7519 (F1: 0.7083) P: 0.6458 R: 0.7842 at threshold 0.0061
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.6087 (100 steps)
+Best F-2.0 found: 0.7519 (F1: 0.7083) P: 0.6458 R: 0.7842 at threshold 0.0061
+--- Evaluation Results ---
+Overall results:
+{'FN': 139,
+ 'FP': 277,
+ 'Hit@100%': None,
+ 'Hit@150%': None,
+ 'NDCG@100%': None,
+ 'NDCG@150%': None,
+ 'ROC/AUC': 0.8602855203645717,
+ 'TN': 4079,
+ 'TP': 505,
+ 'f1': 0.7082699317377902,
+ 'precision': 0.6457800428928383,
+ 'recall': 0.7841614785068094,
+ 'threshold': 0.0060869369855561855}
+Results appended to results\experiment_summary.csv
+--- Script End ---
+PS C:\Users\iship\Desktop\TranAD> python main.py --model ConvLSTMAttentionAutoencoder --dataset SWaT 
+                                  python main.py --model ConvLSTMAttentionAutoencoder --dataset SWaT --t            python main.py --model ConvLSTMAttentionAutoencoder --dataset SWaT --test
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='ConvLSTMAttentionAutoencoder', dataset='SWaT', entity=None, retrain=False, test=True, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified or default found for SWaT. Assuming plain 'train/test/labels.npy' files.
+Loaded processed\SWaT\train.npy, shape: (3000, 1)
+Loaded processed\SWaT\test.npy, shape: (5000, 1)
+Loaded processed\SWaT\labels.npy, shape: (5000, 1)
+Train/Test/Label shapes: (3000, 1) / (5000, 1) / (5000, 1)
+--- Exiting load_dataset ---
+--- Returned from load_dataset ---
+--- Calling load_model_revised ---
+--- Entering load_model_revised (ConvLSTMAttentionAutoencoder) ---
+Warning: ConvLSTMAttentionAutoencoder defined, but Attention mechanism not implemented in forward pass yet.
+Loading pre-trained model: ConvLSTMAttentionAutoencoder from checkpoints/ConvLSTMAttentionAutoencoder_SWaT/model.ckpt
+Loaded checkpoint from epoch 4
+--- Exiting load_model_revised (ConvLSTMAttentionAutoencoder) ---
+--- Returned from load_model_revised ---
+--- Original data prepared ---
+--- Calling convert_to_windows (window size: 10) ---
+--- Returned from convert_to_windows ---
+Original train/test shapes: torch.Size([3000, 1]) / torch.Size([5000, 1])
+Windowed train/test shapes: torch.Size([3000, 10, 1]) / torch.Size([5000, 10, 1])
+Target train/test shapes: torch.Size([3000, 10, 1]) / torch.Size([5000, 10, 1])
+--- Entering Testing Phase ---
+Testing ConvLSTMAttentionAutoencoder on SWaT Entity: Default
+--- Calling backprop for testing ---
+--- Returned from backprop (testing) ---
+--- Entering Scoring Phase ---
+Calculating loss on training set for POT...
+Shape of loss (test): (5000, 1)
+Shape of lossT (train): (3000, 1)
+Shape of labels: (5000, 1)
+Evaluating thresholds and metrics...
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.6238 (100 steps)
+Best F-2.0 found: 0.7485 (F1: 0.8063) P: 0.9256 R: 0.7143 at threshold 0.0125
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.6238 (100 steps)
+Best F-2.0 found: 0.7485 (F1: 0.8063) P: 0.9256 R: 0.7143 at threshold 0.0125
+--- Evaluation Results ---
+Overall results:
+{'FN': 184,
+ 'FP': 37,
+ 'Hit@100%': None,
+ 'Hit@150%': None,
+ 'NDCG@100%': None,
+ 'NDCG@150%': None,
+ 'ROC/AUC': 0.8528958415322051,
+ 'TN': 4319,
+ 'TP': 460,
+ 'f1': 0.8063053230510567,
+ 'precision': 0.9255533012967143,
+ 'recall': 0.7142857031943214,
+ 'threshold': 0.012476586280906313}
+Results appended to results\experiment_summary.csv
+--- Script End ---
+PS C:\Users\iship\Desktop\TranAD> python main.py --model ConvGRUAttentionAutoencoder --dataset SWaT -
+                                  python main.py --model ConvGRUAttentionAutoencoder --dataset SWaT --test
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='ConvGRUAttentionAutoencoder', dataset='SWaT', entity=None, retrain=False, test=True, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified or default found for SWaT. Assuming plain 'train/test/labels.npy' files.
+Loaded processed\SWaT\train.npy, shape: (3000, 1)
+Loaded processed\SWaT\test.npy, shape: (5000, 1)
+Loaded processed\SWaT\labels.npy, shape: (5000, 1)
+Train/Test/Label shapes: (3000, 1) / (5000, 1) / (5000, 1)
+--- Exiting load_dataset ---
+--- Entering load_model_revised (ConvGRUAttentionAutoencoder) ---
+Warning: ConvGRUAttentionAutoencoder defined, but Attention mechanism not implemented in forward pass yet.
+Loading pre-trained model: ConvGRUAttentionAutoencoder from checkpoints/ConvGRUAttentionAutoencoder_SWaT/model.ckpt
+Loaded checkpoint from epoch 4
+--- Exiting load_model_revised (ConvGRUAttentionAutoencoder) ---
+--- Returned from load_model_revised ---
+--- Original data prepared ---
+--- Calling convert_to_windows (window size: 10) ---
+--- Returned from convert_to_windows ---
+Original train/test shapes: torch.Size([3000, 1]) / torch.Size([5000, 1])
+Windowed train/test shapes: torch.Size([3000, 10, 1]) / torch.Size([5000, 10, 1])
+Target train/test shapes: torch.Size([3000, 10, 1]) / torch.Size([5000, 10, 1])
+--- Entering Testing Phase ---
+Testing ConvGRUAttentionAutoencoder on SWaT Entity: Default
+--- Calling backprop for testing ---
+--- Returned from backprop (testing) ---
+--- Entering Scoring Phase ---
+Calculating loss on training set for POT...
+Shape of loss (test): (5000, 1)
+Shape of lossT (train): (3000, 1)
+Shape of labels: (5000, 1)
+Evaluating thresholds and metrics...
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.6087 (100 steps)
+Best F-2.0 found: 0.7519 (F1: 0.7083) P: 0.6458 R: 0.7842 at threshold 0.0061
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.6087 (100 steps)
+Best F-2.0 found: 0.7519 (F1: 0.7083) P: 0.6458 R: 0.7842 at threshold 0.0061
+--- Evaluation Results ---
+Overall results:
+{'FN': 139,
+ 'FP': 277,
+ 'Hit@100%': None,
+ 'Hit@150%': None,
+ 'NDCG@100%': None,
+ 'NDCG@150%': None,
+ 'ROC/AUC': 0.8602855203645717,
+ 'TN': 4079,
+ 'TP': 505,
+ 'f1': 0.7082699317377902,
+ 'precision': 0.6457800428928383,
+ 'recall': 0.7841614785068094,
+ 'threshold': 0.0060869369855561855}
+Results appended to results\experiment_summary.csv
+--- Script End ---
+PS C:\Users\iship\Desktop\TranAD> python main.py --model LSTMAutoencoder --dataset UCR --test
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='LSTMAutoencoder', dataset='UCR', entity=None, retrain=False, test=True, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified, using default for UCR: 136
+Loaded processed\UCR\136_train.npy, shape: (1600, 1)
+Loaded processed\UCR\136_test.npy, shape: (5900, 1)
+Loaded processed\UCR\136_labels.npy, shape: (5900, 1)
+Train/Test/Label shapes: (1600, 1) / (5900, 1) / (5900, 1)
+--- Exiting load_dataset ---
+--- Returned from load_dataset ---
+--- Feature dimension: 1 ---
+--- Entering load_model_revised (LSTMAutoencoder) ---
+Loading pre-trained model: LSTMAutoencoder from checkpoints/LSTMAutoencoder_UCR/model.ckpt
+Loaded checkpoint from epoch 4
+--- Exiting load_model_revised (LSTMAutoencoder) ---
+--- Returned from load_model_revised ---
+--- Original data prepared ---
+--- Calling convert_to_windows (window size: 10) ---
+--- Returned from convert_to_windows ---
+Original train/test shapes: torch.Size([1600, 1]) / torch.Size([5900, 1])
+Windowed train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+Target train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+--- Entering Testing Phase ---
+Testing LSTMAutoencoder on UCR Entity: Default
+--- Calling backprop for testing ---
+--- Returned from backprop (testing) ---
+--- Entering Scoring Phase ---
+Calculating loss on training set for POT...
+Shape of loss (test): (5900, 1)
+Shape of lossT (train): (1600, 1)
+Shape of labels: (5900, 1)
+Evaluating thresholds and metrics...
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0385 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0219
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0385 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0219
+--- Evaluation Results ---
+Overall results:
+{'FN': 0,
+ 'FP': 0,
+ 'Hit@100%': None,
+ 'Hit@150%': None,
+ 'NDCG@100%': None,
+ 'NDCG@150%': None,
+ 'ROC/AUC': 1.0,
+ 'TN': 5789,
+ 'TP': 111,
+ 'f1': 0.999994909934918,
+ 'precision': 0.999999909909918,
+ 'recall': 0.999999909909918,
+ 'threshold': 0.021927817655407564}
+Results appended to results\experiment_summary.csv
+--- Script End ---
+PS C:\Users\iship\Desktop\TranAD> python main.py --model GRUAutoencoder --dataset UCR --test
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='GRUAutoencoder', dataset='UCR', entity=None, retrain=False, test=True, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified, using default for UCR: 136
+Loaded processed\UCR\136_train.npy, shape: (1600, 1)
+Loaded processed\UCR\136_test.npy, shape: (5900, 1)
+Loaded processed\UCR\136_labels.npy, shape: (5900, 1)
+Train/Test/Label shapes: (1600, 1) / (5900, 1) / (5900, 1)
+--- Exiting load_dataset ---
+--- Returned from load_dataset ---
+--- Feature dimension: 1 ---
+--- Calling load_model_revised ---
+--- Entering load_model_revised (GRUAutoencoder) ---
+Loading pre-trained model: GRUAutoencoder from checkpoints/GRUAutoencoder_UCR/model.ckpt
+Loaded checkpoint from epoch 4
+--- Exiting load_model_revised (GRUAutoencoder) ---
+--- Returned from load_model_revised ---
+--- Original data prepared ---
+--- Calling convert_to_windows (window size: 10) ---
+--- Returned from convert_to_windows ---
+Original train/test shapes: torch.Size([1600, 1]) / torch.Size([5900, 1])
+Windowed train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+Target train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+--- Entering Testing Phase ---
+Testing GRUAutoencoder on UCR Entity: Default
+--- Calling backprop for testing ---
+--- Returned from backprop (testing) ---
+--- Entering Scoring Phase ---
+Calculating loss on training set for POT...
+Shape of loss (test): (5900, 1)
+Shape of lossT (train): (1600, 1)
+Shape of labels: (5900, 1)
+Evaluating thresholds and metrics...
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0379 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0155
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0379 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0155
+--- Evaluation Results ---
+Overall results:
+{'FN': 0,
+ 'FP': 0,
+ 'Hit@100%': None,
+ 'Hit@150%': None,
+ 'NDCG@100%': None,
+ 'NDCG@150%': None,
+ 'ROC/AUC': 1.0,
+ 'TN': 5789,
+ 'TP': 111,
+ 'f1': 0.999994909934918,
+ 'precision': 0.999999909909918,
+ 'recall': 0.999999909909918,
+ 'threshold': 0.015540132698023693}
+Results appended to results\experiment_summary.csv
+--- Script End ---
+PS C:\Users\iship\Desktop\TranAD> python main.py --model ConvLSTMAutoencoder --dataset UCR --test
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='ConvLSTMAutoencoder', dataset='UCR', entity=None, retrain=False, test=True, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified, using default for UCR: 136
+Loaded processed\UCR\136_train.npy, shape: (1600, 1)
+Loaded processed\UCR\136_test.npy, shape: (5900, 1)
+--- Entering load_model_revised (ConvLSTMAutoencoder) ---
+Loading pre-trained model: ConvLSTMAutoencoder from checkpoints/ConvLSTMAutoencoder_UCR/model.ckpt
+Loaded checkpoint from epoch 4
+--- Exiting load_model_revised (ConvLSTMAutoencoder) ---
+--- Returned from load_model_revised ---
+--- Original data prepared ---
+--- Calling convert_to_windows (window size: 10) ---
+--- Returned from convert_to_windows ---
+Original train/test shapes: torch.Size([1600, 1]) / torch.Size([5900, 1])
+Windowed train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+Target train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+--- Entering Testing Phase ---
+Testing ConvLSTMAutoencoder on UCR Entity: Default
+--- Calling backprop for testing ---
+--- Returned from backprop (testing) ---
+--- Entering Scoring Phase ---
+Calculating loss on training set for POT...
+Shape of loss (test): (5900, 1)
+Shape of lossT (train): (1600, 1)
+Shape of labels: (5900, 1)
+Evaluating thresholds and metrics...
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0813 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0382
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0813 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0382
+--- Evaluation Results ---
+Overall results:
+{'FN': 0,
+ 'FP': 0,
+ 'Hit@100%': None,
+ 'Hit@150%': None,
+ 'NDCG@100%': None,
+ 'NDCG@150%': None,
+ 'ROC/AUC': 1.0,
+ 'TN': 5789,
+ 'TP': 111,
+ 'f1': 0.999994909934918,
+ 'precision': 0.999999909909918,
+ 'recall': 0.999999909909918,
+ 'threshold': 0.03820783626236156}
+Results appended to results\experiment_summary.csv
+--- Script End ---
+PS C:\Users\iship\Desktop\TranAD> python main.py --model ConvGRUAutoencoder --datase
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='ConvGRUAutoencoder', dataset='UCR', entity=None, retrain=False, test=True, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified, using default for UCR: 136
+Loaded processed\UCR\136_train.npy, shape: (1600, 1)
+Loaded processed\UCR\136_test.npy, shape: (5900, 1)
+Loaded processed\UCR\136_labels.npy, shape: (5900, 1)
+Train/Test/Label shapes: (1600, 1) / (5900, 1) / (5900, 1)
+--- Exiting load_dataset ---
+--- Returned from load_dataset ---
+--- Feature dimension: 1 ---
+--- Calling load_model_revised ---
+--- Entering load_model_revised (ConvGRUAutoencoder) ---
+Loading pre-trained model: ConvGRUAutoencoder from checkpoints/ConvGRUAutoencoder_UCR/model.ckpt
+Loaded checkpoint from epoch 4
+--- Exiting load_model_revised (ConvGRUAutoencoder) ---
+--- Returned from load_model_revised ---
+--- Original data prepared ---
+--- Calling convert_to_windows (window size: 10) ---
+--- Returned from convert_to_windows ---
+Original train/test shapes: torch.Size([1600, 1]) / torch.Size([5900, 1])
+Windowed train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+Target train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+--- Entering Testing Phase ---
+Testing ConvGRUAutoencoder on UCR Entity: Default
+--- Calling backprop for testing ---
+--- Returned from backprop (testing) ---
+--- Entering Scoring Phase ---
+Calculating loss on training set for POT...
+Shape of loss (test): (5900, 1)
+Shape of lossT (train): (1600, 1)
+Shape of labels: (5900, 1)
+Evaluating thresholds and metrics...
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0506 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0248
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0506 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0248
+--- Evaluation Results ---
+Overall results:
+{'FN': 0,
+ 'FP': 0,
+ 'Hit@100%': None,
+ 'Hit@150%': None,
+ 'NDCG@100%': None,
+ 'NDCG@150%': None,
+ 'ROC/AUC': 1.0,
+ 'TN': 5789,
+ 'TP': 111,
+ 'f1': 0.999994909934918,
+ 'precision': 0.999999909909918,
+ 'recall': 0.999999909909918,
+ 'threshold': 0.02481152569373992}
+Results appended to results\experiment_summary.csv
+--- Script End ---
+
+
+PS C:\Users\iship\Desktop\TranAD> python main.py --model ConvLSTMAttentionAutoencoder --dataset UCR -
+PS C:\Users\iship\Desktop\TranAD> python main.py --model ConvLSTMAttentionAutoencoder --dataset UCR -
+PS C:\Users\iship\Desktop\TranAD> python main.py --model ConvLSTMAttentionAutoencoder --dataset UCR -
+PS C:\Users\iship\Desktop\TranAD> python main.py --model ConvLSTMAttentionAutoencoder --dataset UCR -
+-test
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='ConvLSTMAttentionAutoencoder', dataset='UCR', entity=None, retrain=False, test=True, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified, using default for UCR: 136
+Loaded processed\UCR\136_train.npy, shape: (1600, 1)
+Loaded processed\UCR\136_test.npy, shape: (5900, 1)
+Loaded processed\UCR\136_labels.npy, shape: (5900, 1)
+Train/Test/Label shapes: (1600, 1) / (5900, 1) / (5900, 1)
+--- Exiting load_dataset ---
+--- Returned from load_dataset ---
+--- Feature dimension: 1 ---
+--- Calling load_model_revised ---
+--- Entering load_model_revised (ConvLSTMAttentionAutoencoder) ---
+Warning: ConvLSTMAttentionAutoencoder defined, but Attention mechanism not implemented in forward pass yet.
+Loading pre-trained model: ConvLSTMAttentionAutoencoder from checkpoints/ConvLSTMAttentionAutoencoder_UCR/model.ckpt
+Loaded checkpoint from epoch 4
+--- Exiting load_model_revised (ConvLSTMAttentionAutoencoder) ---
+--- Returned from load_model_revised ---
+--- Original data prepared ---
+--- Calling convert_to_windows (window size: 10) ---
+--- Returned from convert_to_windows ---
+Original train/test shapes: torch.Size([1600, 1]) / torch.Size([5900, 1])
+Windowed train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+Target train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+--- Entering Testing Phase ---
+Testing ConvLSTMAttentionAutoencoder on UCR Entity: Default
+--- Calling backprop for testing ---
+--- Returned from backprop (testing) ---
+--- Entering Scoring Phase ---
+Calculating loss on training set for POT...
+Shape of loss (test): (5900, 1)
+Shape of lossT (train): (1600, 1)
+Shape of labels: (5900, 1)
+Evaluating thresholds and metrics...
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0813 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0382
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0813 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0382
+--- Evaluation Results ---
+Overall results:
+{'FN': 0,
+ 'FP': 0,
+ 'Hit@100%': None,
+ 'Hit@150%': None,
+ 'NDCG@100%': None,
+ 'NDCG@150%': None,
+ 'ROC/AUC': 1.0,
+ 'TN': 5789,
+ 'TP': 111,
+ 'f1': 0.999994909934918,
+ 'precision': 0.999999909909918,
+ 'recall': 0.999999909909918,
+ 'threshold': 0.03820783626236156}
+Results appended to results\experiment_summary.csv
+--- Script End ---
+PS C:\Users\iship\Desktop\TranAD> python main.py --model ConvLSTMAttentionAutoencoder --dataset UCR --test
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='ConvLSTMAttentionAutoencoder', dataset='UCR', entity=None, retrain=False, test=True, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified, using default for UCR: 136
+Loaded processed\UCR\136_train.npy, shape: (1600, 1)
+Loaded processed\UCR\136_test.npy, shape: (5900, 1)
+Loaded processed\UCR\136_labels.npy, shape: (5900, 1)
+Train/Test/Label shapes: (1600, 1) / (5900, 1) / (5900, 1)
+--- Exiting load_dataset ---
+--- Returned from load_dataset ---
+--- Feature dimension: 1 ---
+--- Calling load_model_revised ---
+--- Entering load_model_revised (ConvLSTMAttentionAutoencoder) ---
+Warning: ConvLSTMAttentionAutoencoder defined, but Attention mechanism not implemented in forward pass yet.
+Loading pre-trained model: ConvLSTMAttentionAutoencoder from checkpoints/ConvLSTMAttentionAutoencoder_UCR/model.ckpt
+Loaded checkpoint from epoch 4
+--- Exiting load_model_revised (ConvLSTMAttentionAutoencoder) ---
+--- Returned from load_model_revised ---
+--- Original data prepared ---
+--- Calling convert_to_windows (window size: 10) ---
+--- Returned from convert_to_windows ---
+Original train/test shapes: torch.Size([1600, 1]) / torch.Size([5900, 1])
+Windowed train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+Target train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+--- Entering Testing Phase ---
+Testing ConvLSTMAttentionAutoencoder on UCR Entity: Default
+--- Calling backprop for testing ---
+--- Returned from backprop (testing) ---
+--- Entering Scoring Phase ---
+Calculating loss on training set for POT...
+Shape of loss (test): (5900, 1)
+Shape of lossT (train): (1600, 1)
+Shape of labels: (5900, 1)
+Evaluating thresholds and metrics...
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0813 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0382
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0813 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0382
+--- Evaluation Results ---
+Overall results:
+{'FN': 0,
+ 'FP': 0,
+ 'Hit@100%': None,
+ 'Hit@150%': None,
+ 'NDCG@100%': None,
+ 'NDCG@150%': None,
+ 'ROC/AUC': 1.0,
+ 'TN': 5789,
+ 'TP': 111,
+ 'f1': 0.999994909934918,
+ 'precision': 0.999999909909918,
+ 'recall': 0.999999909909918,
+ 'threshold': 0.03820783626236156}
+Results appended to results\experiment_summary.csv
+--- Script End ---
+PS C:\Users\iship\Desktop\TranAD> python main.py --model ConvGRUAttentionAutoencoder --dataset UCR --test
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='ConvGRUAttentionAutoencoder', dataset='UCR', entity=None, retrain=False, test=True, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified, using default for UCR: 136
+Loaded processed\UCR\136_train.npy, shape: (1600, 1)
+Loaded processed\UCR\136_test.npy, shape: (5900, 1)
+Loaded processed\UCR\136_labels.npy, shape: (5900, 1)
+Train/Test/Label shapes: (1600, 1) / (5900, 1) / (5900, 1)
+--- Exiting load_dataset ---
+--- Returned from load_dataset ---
+--- Feature dimension: 1 ---
+--- Calling load_model_revised ---
+--- Entering load_model_revised (ConvGRUAttentionAutoencoder) ---
+Warning: ConvGRUAttentionAutoencoder defined, but Attention mechanism not implemented in forward pass yet.
+Loading pre-trained model: ConvGRUAttentionAutoencoder from checkpoints/ConvGRUAttentionAutoencoder_UCR/model.ckpt
+Loaded checkpoint from epoch 4
+--- Exiting load_model_revised (ConvGRUAttentionAutoencoder) ---
+--- Returned from load_model_revised ---
+--- Original data prepared ---
+--- Calling convert_to_windows (window size: 10) ---
+--- Returned from convert_to_windows ---
+Original train/test shapes: torch.Size([1600, 1]) / torch.Size([5900, 1])
+Windowed train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+Target train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+--- Entering Testing Phase ---
+Testing ConvGRUAttentionAutoencoder on UCR Entity: Default
+--- Calling backprop for testing ---
+--- Returned from backprop (testing) ---
+--- Entering Scoring Phase ---
+Calculating loss on training set for POT...
+Shape of loss (test): (5900, 1)
+Shape of lossT (train): (1600, 1)
+Shape of labels: (5900, 1)
+Evaluating thresholds and metrics...
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0506 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0248
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0506 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0248
+--- Evaluation Results ---
+Overall results:
+{'FN': 0,
+ 'FP': 0,
+ 'Hit@100%': None,
+ 'Hit@150%': None,
+ 'NDCG@100%': None,
+ 'NDCG@150%': None,
+ 'ROC/AUC': 1.0,
+ 'TN': 5789,
+ 'TP': 111,
+ 'f1': 0.999994909934918,
+ 'precision': 0.999999909909918,
+ 'recall': 0.999999909909918,
+ 'threshold': 0.02481152569373992}
+Results appended to results\experiment_summary.csv
+--- Script End ---
+PS C:\Users\iship\Desktop\TranAD> python main.py --model ConvGRUAttentionAutoencoder --dataset UCR --test
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='ConvGRUAttentionAutoencoder', dataset='UCR', entity=None, retrain=False, test=True, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified, using default for UCR: 136
+Loaded processed\UCR\136_train.npy, shape: (1600, 1)
+Loaded processed\UCR\136_test.npy, shape: (5900, 1)
+Loaded processed\UCR\136_labels.npy, shape: (5900, 1)
+Train/Test/Label shapes: (1600, 1) / (5900, 1) / (5900, 1)
+--- Exiting load_dataset ---
+--- Returned from load_dataset ---
+--- Feature dimension: 1 ---
+--- Calling load_model_revised ---
+--- Entering load_model_revised (ConvGRUAttentionAutoencoder) ---
+Warning: ConvGRUAttentionAutoencoder defined, but Attention mechanism not implemented in forward pass yet.
+Loading pre-trained model: ConvGRUAttentionAutoencoder from checkpoints/ConvGRUAttentionAutoencoder_UCR/model.ckpt
+Loaded checkpoint from epoch 4
+--- Exiting load_model_revised (ConvGRUAttentionAutoencoder) ---
+--- Returned from load_model_revised ---
+--- Original data prepared ---
+--- Calling convert_to_windows (window size: 10) ---
+--- Returned from convert_to_windows ---
+Original train/test shapes: torch.Size([1600, 1]) / torch.Size([5900, 1])
+Windowed train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+Target train/test shapes: torch.Size([1600, 10, 1]) / torch.Size([5900, 10, 1])
+--- Entering Testing Phase ---
+Testing ConvGRUAttentionAutoencoder on UCR Entity: Default
+--- Calling backprop for testing ---
+--- Returned from backprop (testing) ---
+--- Entering Scoring Phase ---
+Calculating loss on training set for POT...
+Shape of loss (test): (5900, 1)
+Shape of lossT (train): (1600, 1)
+Shape of labels: (5900, 1)
+Evaluating thresholds and metrics...
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0506 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0248
+Using bf_search to find best F-2.0 threshold between 0.0000 and 0.0506 (100 steps)
+Best F-2.0 found: 1.0000 (F1: 1.0000) P: 1.0000 R: 1.0000 at threshold 0.0248
+--- Evaluation Results ---
+Overall results:
+{'FN': 0,
+ 'FP': 0,
+ 'Hit@100%': None,
+ 'Hit@150%': None,
+ 'NDCG@100%': None,
+ 'NDCG@150%': None,
+ 'ROC/AUC': 1.0,
+ 'TN': 5789,
+ 'TP': 111,
+ 'f1': 0.999994909934918,
+ 'precision': 0.999999909909918,
+ 'recall': 0.999999909909918,
+ 'threshold': 0.02481152569373992}
+Results appended to results\experiment_summary.csv
+--- Script End ---
+PS C:\Users\iship\Desktop\TranAD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  python src/main.py --model ConvLSTMAttentionAutoencoder --dataset SWaT
+C:\Users\iship\New folder\envs\tf_gpu\python.exe: can't open file 'C:\\Users\\iship\\Desktop\\TranAD\\src\\main.py': [Errno 2] No such file or directory
+PS C:\Users\iship\Desktop\TranAD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  python main.py --model ConvLSTMAttentionAutoencoder --dataset SWaT
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='ConvLSTMAttentionAutoencoder', dataset='SWaT', entity=None, retrain=False, test=False, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified or default found for SWaT. Assuming plain 'train/test/labels.npy' files.
+Loaded processed\SWaT\train.npy, shape: (3000, 1)
+Loaded processed\SWaT\test.npy, shape: (5000, 1)
+Loaded processed\SWaT\labels.npy, shape: (5000, 1)
+Train/Test/Label shapes: (3000, 1) / (5000, 1) / (5000, 1)
+--- Exiting load_dataset ---
+--- Returned from load_dataset ---
+--- Feature dimension: 1 ---
+--- Calling load_model_revised ---
+--- Entering load_model_revised (ConvLSTMAttentionAutoencoder) ---
+Warning: Could not instantiate ConvLSTMAttentionAutoencoder with standard args: ConvLSTM.__init__() got an unexpected keyword argument 'dropout'
+Attempting instantiation with only 'feats' argument...
+Fallback instantiation failed: ConvLSTM.__init__() got an unexpected keyword argument 'dropout'      
+Traceback (most recent call last):
+  File "C:\Users\iship\Desktop\TranAD\main.py", line 163, in load_model_revised
+    model = model_class(**model_args).double()
+  File "C:\Users\iship\Desktop\TranAD\src\models.py", line 1035, in __init__
+    self.encoder = ConvLSTM(input_dim=1, # Input channels = 1
+TypeError: ConvLSTM.__init__() got an unexpected keyword argument 'dropout'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\iship\Desktop\TranAD\main.py", line 426, in <module>
+    model, optimizer, scheduler, start_epoch, accuracy_list = load_model_revised(
+  File "C:\Users\iship\Desktop\TranAD\main.py", line 175, in load_model_revised
+    raise fallback_e
+  File "C:\Users\iship\Desktop\TranAD\main.py", line 168, in load_model_revised
+    model = model_class(feats=dims).double()
+  File "C:\Users\iship\Desktop\TranAD\src\models.py", line 1035, in __init__
+    self.encoder = ConvLSTM(input_dim=1, # Input channels = 1
+TypeError: ConvLSTM.__init__() got an unexpected keyword argument 'dropout'
+PS C:\Users\iship\Desktop\TranAD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  python main.py --model ConvLSTMAttentionAutoencoder --dataset SWaT
+Using device: cpu
+--- Entering main block ---
+--- Args parsed: Namespace(model='ConvLSTMAttentionAutoencoder', dataset='SWaT', entity=None, retrain=False, test=False, less=False, window=None, batch=None) ---
+--- Constants and models imported ---
+--- Calling load_dataset ---
+--- Entering load_dataset ---
+No entity specified or default found for SWaT. Assuming plain 'train/test/labels.npy' files.
+Loaded processed\SWaT\train.npy, shape: (3000, 1)
+Loaded processed\SWaT\test.npy, shape: (5000, 1)
+Loaded processed\SWaT\labels.npy, shape: (5000, 1)
+Train/Test/Label shapes: (3000, 1) / (5000, 1) / (5000, 1)
+--- Exiting load_dataset ---
+--- Returned from load_dataset ---
+--- Feature dimension: 1 ---
+--- Calling load_model_revised ---
+--- Entering load_model_revised (ConvLSTMAttentionAutoencoder) ---
+Loading pre-trained model: ConvLSTMAttentionAutoencoder from checkpoints/ConvLSTMAttentionAutoencoder_SWaT/model.ckpt
+Error loading checkpoint from checkpoints/ConvLSTMAttentionAutoencoder_SWaT/model.ckpt: Error(s) in loading state_dict for ConvLSTMAttentionAutoencoder:
+        Missing key(s) in state_dict: "attention.in_proj_weight", "attention.in_proj_bias", "attention.out_proj.weight", "attention.out_proj.bias".
+        size mismatch for decoder_convlstm.cell_list.0.conv.weight: copying a param with shape torch.Size([128, 64, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 96, 3, 3]).. Creating new model.
+--- Exiting load_model_revised (ConvLSTMAttentionAutoencoder) ---
+--- Returned from load_model_revised ---
+--- Original data prepared ---
+--- Calling convert_to_windows (window size: 10) ---
+--- Returned from convert_to_windows ---
+Original train/test shapes: torch.Size([3000, 1]) / torch.Size([5000, 1])
+Windowed train/test shapes: torch.Size([3000, 10, 1]) / torch.Size([5000, 10, 1])
+Target train/test shapes: torch.Size([3000, 10, 1]) / torch.Size([5000, 10, 1])
+--- Entering Training Phase ---
+Training ConvLSTMAttentionAutoencoder on SWaT
+Epoch 0,        Avg Loss = 0.002641,    LR = 0.008000                                                
+Epoch 1,        Avg Loss = 0.001415,    LR = 0.008000                                                
+Epoch 2,        Avg Loss = 0.001226,    LR = 0.008000                                                
+Epoch 3,        Avg Loss = 0.001011,    LR = 0.008000                                                
+Epoch 4,        Avg Loss = 0.000639,    LR = 0.007200                                                
+100%|█████████████████████████████████████████████████████████████████| 5/5 [00:15<00:00,  3.10s/it] 
+Training time:    15.5071 s
+Plotting results for ConvLSTMAttentionAutoencoder on SWaT...
+Traceback (most recent call last):
+  File "C:\Users\iship\Desktop\TranAD\main.py", line 487, in <module>
+    plotter(f'{args.model}_{args.dataset}', testO.cpu().numpy(), y_pred, loss, labels_np)
+NameError: name 'y_pred' is not defined
+PS C:\Users\iship\Desktop\TranAD>
